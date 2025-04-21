@@ -1,9 +1,7 @@
 import { useState } from "react";
+import Pokedex from "./components/pokedex";
 
-function App() {
-  const [highScore, setHighScore] = useState(0);
-  const [currentScore, setCurrentScore] = useState(0);
-
+function NavBar({ highScore, currentScore }) {
   return (
     <nav>
       <ul>
@@ -18,4 +16,14 @@ function App() {
   );
 }
 
-export default App;
+export default function App() {
+  const [highScore, setHighScore] = useState(0);
+  const [currentScore, setCurrentScore] = useState(0);
+
+  return (
+    <div className="app">
+      <NavBar highScore={highScore} currentScore={currentScore} />
+      <Pokedex />
+    </div>
+  );
+}

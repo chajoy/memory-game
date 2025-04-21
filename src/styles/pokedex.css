@@ -1,0 +1,47 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 10px;
+  max-width: 1200px;
+  width: 90%;
+  opacity: 0;
+  margin: auto;
+  animation: fadeIn 0.4s forwards;
+
+  .card {
+    aspect-ratio: 1/1;
+    border: 3px solid rgba(192, 192, 192, 0.7);
+    outline: 3px solid transparent;
+    transition: outline 0.4s, filter 0.4s;
+    background-size: cover;
+    cursor: pointer;
+    image-rendering: pixelated;
+  }
+
+  .card:hover {
+    outline: 3px solid white;
+    outline-offset: 3px;
+    filter: brightness(1.2);
+  }
+}
+
+.loadingIcon {
+  margin: auto;
+  min-height: 50px;
+  animation: loading 2s linear infinite;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
