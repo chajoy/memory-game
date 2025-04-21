@@ -9,6 +9,7 @@
   animation: fadeIn 0.4s forwards;
 
   .card {
+    position: relative;
     aspect-ratio: 1/1;
     border: 3px solid rgba(192, 192, 192, 0.7);
     outline: 3px solid transparent;
@@ -16,12 +17,24 @@
     background-size: cover;
     cursor: pointer;
     image-rendering: pixelated;
+    overflow: hidden;
   }
 
   .card:hover {
     outline: 3px solid white;
     outline-offset: 3px;
     filter: brightness(1.2);
+  }
+
+  .card::after {
+    content: "";
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.1);
+    height: 50%;
+    width: calc(100% + 60px);
+    bottom: -50px;
+    left: -40px;
+    transform: rotateZ(20deg);
   }
 }
 
