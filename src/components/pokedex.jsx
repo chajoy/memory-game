@@ -17,9 +17,20 @@ const colors = [
   "rgb(75, 105, 138)",
 ];
 
-export default function Pokedex() {
-  const [pokemonDB, setPokemonDB] = useState([]);
+export default function Pokedex({ pokemonDB, setPokemonDB }) {
   const hasFetched = useRef(false);
+
+  function reshuffleDB() {
+    const pokemonDB_copy = [...pokemonDB];
+    for (let i = pokemonDB_copy.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [pokemonDB_copy[i], pokemonDB_copy[j]] = [
+        pokemonDB_copy[j],
+        pokemonDB_copy[i],
+      ];
+    }
+    setPokemonDB(pokemonDB_copy);
+  }
 
   useEffect(() => {
     if (hasFetched.current) return;
@@ -28,8 +39,6 @@ export default function Pokedex() {
     const _pokemonList = Array.from({ length: 12 }, () => {
       return Math.floor(Math.random() * 1025) + 1;
     });
-
-    console.log(_pokemonList);
 
     const fetchAPI = async () => {
       const responses = await Promise.all(
@@ -69,6 +78,7 @@ export default function Pokedex() {
           {pokemonDB.map((pokemon, key) => {
             return (
               <div
+                onClick={() => reshuffleDB()}
                 className="card"
                 key={key}
                 style={{

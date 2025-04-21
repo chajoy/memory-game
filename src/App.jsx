@@ -17,13 +17,14 @@ function NavBar({ highScore, currentScore }) {
 }
 
 export default function App() {
+  const [pokemonDB, setPokemonDB] = useState([]);
   const [highScore, setHighScore] = useState(0);
   const [currentScore, setCurrentScore] = useState(0);
 
   return (
     <div className="app">
       <NavBar highScore={highScore} currentScore={currentScore} />
-      <Pokedex />
+      <Pokedex pokemonDB={pokemonDB} setPokemonDB={setPokemonDB} />
     </div>
   );
 }
