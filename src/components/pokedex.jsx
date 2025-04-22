@@ -67,11 +67,16 @@ function Card({
       }}
     >
       <p>{pokemon.name}</p>
-      <img src={pokemon.image} alt="pokemon image" className="pokemon" />
+      <img
+        src={pokemon.image}
+        alt="pokemon image"
+        className="pokemon"
+        draggable="false"
+      />
       <div className="types">
         {pokemon.element_types.map((type, i) => {
           const _type = typeIcons.find((t) => t.name === type);
-          return <img src={_type.image.name_icon} key={i} />;
+          return <img src={_type.image.name_icon} key={i} draggable="false" />;
         })}
       </div>
     </div>
