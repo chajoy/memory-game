@@ -152,6 +152,11 @@ export default function Pokedex({
               />
             );
           })}
+          <p className="instructions">
+            Click on a Pokémon to score a point. Don’t click the same one more
+            than once, or the game will reset. Try to get the highest score
+            possible.
+          </p>
         </div>
       ) : (
         <img src="/favicon.svg" alt="loading icon" className="loadingIcon" />

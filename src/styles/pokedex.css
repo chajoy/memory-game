@@ -53,6 +53,11 @@
     left: -40px;
     transform: rotateZ(20deg);
   }
+
+  .instructions {
+    grid-column: span 4;
+    text-align: center;
+  }
 }
 
 .loadingIcon {

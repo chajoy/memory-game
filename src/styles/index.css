@@ -6,6 +6,8 @@
   --base: #2e2e2e;
   --highlight: #5a5a5a;
   --accent: #475f8e;
+
+  user-select: none;
 }
 
 *,
