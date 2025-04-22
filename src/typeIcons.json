@@ -1,0 +1,110 @@
+[
+  {
+    "name": "normal",
+    "image": {
+      "name_icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-viii/sword-shield/1.png"
+    }
+  },
+  {
+    "name": "fighting",
+    "image": {
+      "name_icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-viii/sword-shield/2.png"
+    }
+  },
+  {
+    "name": "flying",
+    "image": {
+      "name_icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-viii/sword-shield/3.png"
+    }
+  },
+  {
+    "name": "poison",
+    "image": {
+      "name_icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-viii/sword-shield/4.png"
+    }
+  },
+  {
+    "name": "ground",
+    "image": {
+      "name_icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-viii/sword-shield/5.png"
+    }
+  },
+  {
+    "name": "rock",
+    "image": {
+      "name_icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-viii/sword-shield/6.png"
+    }
+  },
+  {
+    "name": "bug",
+    "image": {
+      "name_icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-viii/sword-shield/7.png"
+    }
+  },
+  {
+    "name": "ghost",
+    "image": {
+      "name_icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-viii/sword-shield/8.png"
+    }
+  },
+  {
+    "name": "steel",
+    "image": {
+      "name_icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-viii/sword-shield/9.png"
+    }
+  },
+  {
+    "name": "fire",
+    "image": {
+      "name_icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-viii/sword-shield/10.png"
+    }
+  },
+  {
+    "name": "water",
+    "image": {
+      "name_icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-viii/sword-shield/11.png"
+    }
+  },
+  {
+    "name": "grass",
+    "image": {
+      "name_icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-viii/sword-shield/12.png"
+    }
+  },
+  {
+    "name": "electric",
+    "image": {
+      "name_icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-viii/sword-shield/13.png"
+    }
+  },
+  {
+    "name": "psychic",
+    "image": {
+      "name_icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-viii/sword-shield/14.png"
+    }
+  },
+  {
+    "name": "ice",
+    "image": {
+      "name_icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-viii/sword-shield/15.png"
+    }
+  },
+  {
+    "name": "dragon",
+    "image": {
+      "name_icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-viii/sword-shield/16.png"
+    }
+  },
+  {
+    "name": "dark",
+    "image": {
+      "name_icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-viii/sword-shield/17.png"
+    }
+  },
+  {
+    "name": "fairy",
+    "image": {
+      "name_icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-viii/sword-shield/18.png"
+    }
+  }
+]

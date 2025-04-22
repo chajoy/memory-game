@@ -1,6 +1,6 @@
 .container {
   display: grid;
-  grid-template-columns: repeat(4, auto);
+  grid-template-columns: repeat(4, 1fr);
   gap: 10px;
   max-width: 1200px;
   width: 90%;
@@ -10,14 +10,31 @@
 
   .card {
     position: relative;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    justify-content: center;
     aspect-ratio: 1/1;
     border: 3px solid rgba(192, 192, 192, 0.7);
     outline: 3px solid transparent;
+    gap: 10px;
     transition: outline 0.4s, filter 0.4s;
-    background-size: cover;
     cursor: pointer;
     image-rendering: pixelated;
-    overflow: hidden;
+    overflow: clip;
+
+    .types {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .pokemon {
+      height: 100%;
+      margin: auto;
+    }
+
+    p {
+      margin: auto;
+    }
   }
 
   .card:hover {

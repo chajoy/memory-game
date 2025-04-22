@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import "../styles/pokedex.css";
+import typeIcons from "../typeIcons.json";
 
 const url = "https://pokeapi.co/api/v2/pokemon/";
 
@@ -63,9 +64,17 @@ function Card({
       className="card"
       style={{
         backgroundColor: pokemon.colour,
-        backgroundImage: `url(${pokemon.image})`,
       }}
-    ></div>
+    >
+      <p>{pokemon.name}</p>
+      <img src={pokemon.image} alt="pokemon image" className="pokemon" />
+      <div className="types">
+        {pokemon.element_types.map((type, i) => {
+          const _type = typeIcons.find((t) => t.name === type);
+          return <img src={_type.image.name_icon} key={i} />;
+        })}
+      </div>
+    </div>
   );
 }
 
@@ -92,7 +101,7 @@ export default function Pokedex({
         _pokemonList.map(async (pokemon, index) => {
           try {
             const response = await fetch(`${url}/${pokemon}`);
-            const { name, sprites } = await response.json();
+            const { name, sprites, types } = await response.json();
 
             const imageUrl = sprites.front_shiny;
 
@@ -108,6 +117,9 @@ export default function Pokedex({
               name,
               image: imageUrl,
               colour: colors[Math.floor(Math.random() * colors.length)],
+              element_types: types.map((i) => {
+                return i.type.name;
+              }),
             };
           } catch (e) {
             console.error(e);

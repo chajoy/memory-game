@@ -1,5 +1,5 @@
 :root {
-  font-family: Helvetica, sans-serif;
+  font-family: "Silkscreen", Helvetica, sans-serif;
 
   --text: white;
   --dark: #161616;
@@ -85,7 +85,6 @@ ul {
 }
 
 nav {
-  font-weight: bold;
   width: 100%;
   padding: 0 50px;
   height: 50px;
@@ -97,12 +96,12 @@ nav {
     height: 100%;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
     list-style-type: none;
   }
 }
 
-ul li:nth-child(2) {
+ul li:first-child {
   margin-right: auto;
 }
 
