@@ -17,8 +17,16 @@ const colors = [
   "rgb(75, 105, 138)",
 ];
 
-export default function Pokedex({ pokemonDB, setPokemonDB }) {
-  const hasFetched = useRef(false);
+function Card({
+  pokemon,
+  pokemonDB,
+  setPokemonDB,
+  setReset,
+  setCurrentScore,
+  currentScore,
+  triggerReset,
+}) {
+  const [clicked, setClicked] = useState(false);
 
   function reshuffleDB() {
     const pokemonDB_copy = [...pokemonDB];
@@ -32,6 +40,45 @@ export default function Pokedex({ pokemonDB, setPokemonDB }) {
     setPokemonDB(pokemonDB_copy);
   }
 
+  function handleClick() {
+    if (clicked) {
+      setClicked(false);
+      setReset({ reset: true, score: currentScore });
+    } else {
+      setClicked(true);
+      setCurrentScore((prev) => prev + 1);
+    }
+    reshuffleDB();
+  }
+
+  useEffect(() => {
+    if (triggerReset.reset) {
+      setClicked(false);
+    }
+  }, [triggerReset.reset]);
+
+  return (
+    <div
+      onClick={() => handleClick()}
+      className="card"
+      style={{
+        backgroundColor: pokemon.colour,
+        backgroundImage: `url(${pokemon.image})`,
+      }}
+    ></div>
+  );
+}
+
+export default function Pokedex({
+  pokemonDB,
+  setPokemonDB,
+  setReset,
+  setCurrentScore,
+  currentScore,
+  triggerReset,
+}) {
+  const hasFetched = useRef(false);
+
   useEffect(() => {
     if (hasFetched.current) return;
     hasFetched.current = true;
@@ -42,7 +89,7 @@ export default function Pokedex({ pokemonDB, setPokemonDB }) {
 
     const fetchAPI = async () => {
       const responses = await Promise.all(
-        _pokemonList.map(async (pokemon) => {
+        _pokemonList.map(async (pokemon, index) => {
           try {
             const response = await fetch(`${url}/${pokemon}`);
             const { name, sprites } = await response.json();
@@ -57,8 +104,10 @@ export default function Pokedex({ pokemonDB, setPokemonDB }) {
             });
 
             return {
+              id: index,
               name,
               image: imageUrl,
+              colour: colors[Math.floor(Math.random() * colors.length)],
             };
           } catch (e) {
             console.error(e);
@@ -75,18 +124,20 @@ export default function Pokedex({ pokemonDB, setPokemonDB }) {
     <>
       {pokemonDB.length > 0 ? (
         <div className="container">
-          {pokemonDB.map((pokemon, key) => {
+          {pokemonDB.map((pokemon) => {
             return (
-              <div
-                onClick={() => reshuffleDB()}
-                className="card"
-                key={key}
-                style={{
-                  backgroundColor:
-                    colors[Math.floor(Math.random() * colors.length)],
-                  backgroundImage: `url(${pokemon.image})`,
+              <Card
+                key={pokemon.id}
+                {...{
+                  pokemon,
+                  pokemonDB,
+                  setPokemonDB,
+                  setReset,
+                  setCurrentScore,
+                  currentScore,
+                  triggerReset,
                 }}
-              ></div>
+              />
             );
           })}
         </div>
