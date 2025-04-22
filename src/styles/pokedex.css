@@ -19,7 +19,7 @@
     gap: 10px;
     transition: outline 0.4s, filter 0.4s;
     cursor: pointer;
-    image-rendering: pixelated;
+
     overflow: clip;
 
     .types {
@@ -30,6 +30,7 @@
     .pokemon {
       height: 100%;
       margin: auto;
+      image-rendering: pixelated;
     }
 
     p {
