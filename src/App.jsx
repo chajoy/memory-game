@@ -8,7 +8,7 @@ function NavBar({ highScore, currentScore }) {
         <li>
           <img src="favicon.svg" alt="logo" />
         </li>
-        <li>Memory Game</li>
+        <li>Pokemon Match</li>
         <li className="nav-label">High Score:</li>
         <li>{highScore}</li>
         <li>|</li>
