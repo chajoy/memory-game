@@ -64,15 +64,10 @@ function Card({
       className="card"
       style={{
         backgroundColor: pokemon.colour,
+        backgroundImage: `url(${pokemon.image})`,
       }}
     >
       <p>{pokemon.name}</p>
-      <img
-        src={pokemon.image}
-        alt="pokemon image"
-        className="pokemon"
-        draggable="false"
-      />
       <div className="types">
         {pokemon.element_types.map((type, i) => {
           const _type = typeIcons.find((t) => t.name === type);

@@ -103,10 +103,26 @@ nav {
   }
 }
 
-ul li:first-child {
+ul li:nth-child(2) {
   margin-right: auto;
 }
 
 button {
   justify-self: start;
+}
+
+@media (max-width: 900px) {
+  .app .nav-label {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  ul li:first-child {
+    margin-right: auto;
+  }
+
+  ul li:nth-child(2) {
+    display: none;
+  }
 }

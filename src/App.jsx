@@ -5,10 +5,15 @@ function NavBar({ highScore, currentScore }) {
   return (
     <nav>
       <ul>
+        <li>
+          <img src="favicon.svg" alt="logo" />
+        </li>
         <li>Memory Game</li>
-        <li>High Score: {highScore}</li>
+        <li className="nav-label">High Score:</li>
+        <li>{highScore}</li>
         <li>|</li>
-        <li>Current Score: {currentScore}</li>
+        <li className="nav-label">Current Score: </li>
+        <li>{currentScore}</li>
       </ul>
     </nav>
   );
